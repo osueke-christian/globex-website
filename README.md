@@ -2,7 +2,7 @@
 
 A high-fidelity **Next.js** rerender of the Framer website [grounded-days-622904.framer.app](https://grounded-days-622904.framer.app). 
 
-VIEW LIVE RENDERING PROGRESS [HERE](globex-website-eosin.vercel.app)
+VIEW LIVE RENDERING PROGRESS [HERE](https://globex-website-eosin.vercel.app)
 
 This project demonstrates a pixel-perfect recreation of a design-heavy interface, transitioning it from a visual builder (Framer) to a robust, code-based React application using the latest modern web technologies.
 
