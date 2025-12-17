@@ -5,7 +5,7 @@ import { ProductShowcase } from "../components/products/product-showcase";
 
 export default function Home() {
     return (
-        <div className="flex flex-col min-h-screen bg-zinc-50 ">
+        <div className="flex flex-col min-h-screen relative z-0">
             <HeroSection />
             <ImageBreaker imageSrc="https://framerusercontent.com/images/ADxhBrAY9KMAACeF4eA108mzzkQ.png?width=1898&height=1267" />
             <ProductShowcase />

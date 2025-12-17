@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { AnimatedWords } from '@/components/animated-words';
 
 interface ContactCard {
   id: number;
@@ -103,30 +104,9 @@ const ContactSection: React.FC = () => {
           </div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="text-gray-400">
-              {['We\'d', 'love', 'to'].map((word, i) => (
-                <span
-                  key={i}
-                  className={`inline-block transition-all duration-700 mr-3 ${isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'
-                    }`}
-                  style={{ transitionDelay: `${i * 100}ms` }}
-                >
-                  {word}
-                </span>
-              ))}
+            <AnimatedWords text="We'd love to" className='text-gray-400' delayOffset={3} />
               <br />
-            </span>
-            {['hear', 'from', 'you'].map((word, i) => (
-              <span
-                key={i}
-                className={`inline-block transition-all duration-700 mr-3 ${isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-8 blur-sm'
-                  }`}
-                style={{ transitionDelay: `${(i + 3) * 100}ms` }}
-              >
-                {word}
-              </span>
-            ))}
-            <span className="text-gray-900">*</span>
+            <AnimatedWords text="hear from you" className='text-gray-900' delayOffset={3} />
           </h2>
         </div>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
 
 export default function ImageBreaker2() {
@@ -25,7 +26,8 @@ export default function ImageBreaker2() {
         style={{ scale, y }}
         className="absolute inset-0 will-change-transform"
       >
-        <img
+        <Image
+          fill
           src="https://framerusercontent.com/images/So0bwy2oxR7SWNdqnpmA8FUQlA.png"
           alt="A man doing surf stunt"
           className="h-full w-full object-cover"

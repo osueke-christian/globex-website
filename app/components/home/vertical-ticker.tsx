@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useIsMobile } from "@/hooks/use-mobile";
+import Image from "next/image";
 
 type Props = {
   images: string[];
@@ -36,9 +37,10 @@ export function VerticalTicker({
             key={i}
             className="relative shrink-0 w-full max-w-[366px] md:max-w-full h-[320px] md:h-[260px] overflow-hidden rounded-lg"
           >
-            <img
+            <Image
               src={src}
               alt=""
+              fill
               className="h-full w-full object-cover"
               loading="lazy"
             />

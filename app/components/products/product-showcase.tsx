@@ -6,6 +6,7 @@ import { motion, Variants } from 'framer-motion';
 import { PRODUCT_DATA, ProductCategory } from '@/data/commodities';
 import { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { AnimatedWords } from '@/components/animated-words';
 
 
 const CategorySection = ({ category }: { category: ProductCategory }) => {
@@ -61,10 +62,9 @@ const CategorySection = ({ category }: { category: ProductCategory }) => {
             viewport={{ once: true, amount: 0.2 }}
             variants={sectionVariants}
         >
-            {/* Title and Subtitle: framer-14gopvn / framer-12ss62t / framer-1htntkw */}
             <div className="space-y-2">
                 <h2 className="text-3xl md:text-4xl font-medium text-gray-900">
-                    {category.title}
+                    <AnimatedWords text={category.title} delayOffset={3}  />
                 </h2>
                 <p className="text-lg text-gray-600 max-w-2xl">
                     {category.subtitle}
@@ -117,7 +117,7 @@ const CategorySection = ({ category }: { category: ProductCategory }) => {
 
 export function ProductShowcase() {
     return (
-        <div className="bg-gray-50 py-10">
+        <div className="bg-white py-10">
             {PRODUCT_DATA.map((category) => (
                 <CategorySection key={category.id} category={category} />
             ))}

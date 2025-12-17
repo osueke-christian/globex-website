@@ -1,14 +1,17 @@
 "use client";
 
 import { LocationCard } from "./location-card";
+import { AnimatedWords } from "@/components/animated-words";
 
 export default function Locations() {
     return (
-        <section id="locations" className="py-24">
+        <section id="locations" className="py-14 md:py-20 bg-white">
             <div className="mx-auto max-w-6xl px-5">
                 {/* Heading */}
                 <div className="mb-16 text-center">
-                    <h2 className="text-4xl font-semibold">Our Locations</h2>
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+                        <AnimatedWords text="Our Locations" delayOffset={3} />
+                    </h2>
                     <p className="mx-auto mt-4 max-w-2xl text-neutral-600">
                         Our location in one of the world&apos;s most connected business hubs
                         allows us to bridge continents — ensuring faster, smarter, and more

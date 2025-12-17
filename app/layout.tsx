@@ -67,7 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${interDisplay.variable} antialiased`}
+        className={`${interDisplay.variable} antialiased bg-white`}
       >
         <Navbar />
         {children}

@@ -1,4 +1,5 @@
 import { VerticalTicker } from "./vertical-ticker";
+import { AnimatedWords } from "@/components/animated-words";
 
 const col1 = [
   "https://framerusercontent.com/images/Y5JAFyps4emoWfMMb3xat5dm6k.png",
@@ -20,11 +21,13 @@ const col3 = [
 
 export default function GallerySection() {
   return (
-    <section className="py-24">
+    <section className="py-14 md:py-20 bg-white">
       {/* Heading */}
       <div className="mb-16 text-center">
-        <h2 className="text-4xl font-semibold">Products Showcase</h2>
-        <p className="mt-2 text-muted-foreground">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+          <AnimatedWords text="Products Showcase" delayOffset={3} />
+        </h2>
+        <p className="mt-2 text-zinc-600">
           A Global Footprint of Excellence
         </p>
       </div>

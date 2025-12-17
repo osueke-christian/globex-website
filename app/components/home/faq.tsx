@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatedWords } from '@/components/animated-words';
 import { CircleQuestionMarkIcon } from 'lucide-react';
 import React, { useEffect, useRef, useState } from 'react';
 import { FaQuestionCircle } from 'react-icons/fa';
@@ -89,30 +90,21 @@ const FAQSection: React.FC = () => {
         <div className="mb-16 text-center space-y-6">
           {/* Eyebrow with icon */}
           <div
-            className={`inline-flex items-center gap-2 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            className={`inline-flex items-center gap-2 t  ransition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
           >
-            <CircleQuestionMarkIcon className="text-gray-500 text-sm" />
-            <span className="text-sm text-gray-500 font-medium">FAQs</span>
+            <CircleQuestionMarkIcon className="text-zinc-500 text-sm" />
+            <span className="text-sm text-zinc-500 font-medium">FAQs</span>
           </div>
 
           {/* Title with word animation */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900">
-            {['Got', 'Questions?'].map((word, i) => (
-              <span
-                key={i}
-                className={`inline-block transition-all duration-700 mr-3 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                  }`}
-                style={{ transitionDelay: `${i * 100 + 200}ms` }}
-              >
-                {word}
-              </span>
-            ))}
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900">
+            <AnimatedWords text="Got Questions" delayOffset={3} />
           </h2>
 
           {/* Subtitle */}
           <p
-            className={`text-base md:text-lg text-gray-600 max-w-2xl mx-auto transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            className={`text-base md:text-lg text-zinc-600 max-w-2xl mx-auto transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
           >
             Everything you need to know before you grab your board and hit the waves.
@@ -163,22 +155,22 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
 
   return (
     <div
-      className="border border-gray-200 rounded-lg bg-gray-50 overflow-hidden transition-all duration-300 hover:shadow-md"
+      className="border border-zinc-200 rounded-lg bg-zinc-50 overflow-hidden transition-all duration-300 hover:shadow-md"
       style={{ transitionDelay: `${delay}ms` }}
     >
       {/* Question */}
       <button
         onClick={onToggle}
-        className="w-full px-6 py-5 flex items-center justify-between gap-4 text-left group focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 rounded-lg transition-all"
+        className="w-full px-6 py-5 flex items-center justify-between gap-4 text-left group focus:outline-none rounded-lg transition-all"
         aria-expanded={isOpen}
       >
-        <span className="text-lg font-medium text-gray-900 pr-4">
+        <span className="text-lg font-medium text-zinc-900 pr-4">
           {faq.question}
         </span>
 
         {/* Icon with rotation animation */}
         <div
-          className={`shrink-0 w-8 h-8 rounded-full bg-gray-900 flex items-center justify-center transition-transform duration-500 ${isOpen ? 'rotate-135' : 'rotate-0'
+          className={`shrink-0 w-8 h-8 rounded-full bg-zinc-900 flex items-center justify-center transition-transform duration-500 ${isOpen ? 'rotate-135' : 'rotate-0'
             }`}
         >
           {/* Plus icon made with dividers */}
@@ -195,7 +187,11 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
         className="overflow-hidden transition-all duration-500 ease-in-out"
       >
         <div ref={contentRef} className="px-6 pb-6">
-          <p className="text-base text-gray-600 leading-relaxed">{faq.answer}</p>
+          {
+            isOpen && (
+              <p className="text-base text-zinc-600 leading-relaxed animate-onrender">{faq.answer}</p>
+            )
+          }
         </div>
       </div>
     </div>

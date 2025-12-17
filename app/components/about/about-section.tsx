@@ -1,10 +1,12 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
-import { Send, Users, TrendingUp, TargetIcon, UsersIcon, KeyRoundIcon, GlobeIcon, MedalIcon, UserIcon } from 'lucide-react';
-import { FaMedal, FaRegHandPeace } from 'react-icons/fa';
+import { KeyRoundIcon, Send, TargetIcon, UsersIcon } from 'lucide-react';
+import Image from 'next/image';
+import React, { useEffect, useRef, useState } from 'react';
+import { FaRegHandPeace } from 'react-icons/fa';
+import StatsSection from './stats-section';
+import { AnimatedWords } from '@/components/animated-words';
 
 interface ValueCard {
   id: number;
@@ -12,13 +14,6 @@ interface ValueCard {
   number: string;
   title: string;
   description: string;
-}
-
-interface StatCard {
-  id: number;
-  icon: React.ReactNode;
-  value: string;
-  label: string;
 }
 
 const values: ValueCard[] = [
@@ -45,26 +40,6 @@ const values: ValueCard[] = [
   },
 ];
 
-const stats: StatCard[] = [
-  {
-    id: 1,
-    icon: <GlobeIcon className="w-8 h-8 text-zinc-500" />,
-    value: '6+',
-    label: 'Countries',
-  },
-  {
-    id: 2,
-    icon: <MedalIcon className="w-8 h-8 text-zinc-500" />,
-    value: '15+',
-    label: 'Years',
-  },
-  {
-    id: 3,
-    icon: <UsersIcon className="w-8 h-8 text-zinc-500" />,
-    value: '100+',
-    label: 'Partners',
-  },
-];
 
 const AboutSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -104,40 +79,17 @@ const AboutSection: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
             <div
-              className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-50 border border-zinc-200 mb-8 transition-all duration-700 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
+              className={`inline-flex items-center gap-2 px-4 py-2 mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
             >
               <Send className="text-zinc-500 text-sm w-4 h-4" />
               <span className="text-sm text-zinc-500 font-medium">About Us</span>
             </div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-zinc-400">
-                {['Built', 'on', 'Trust.'].map((word, i) => (
-                  <span
-                    key={i}
-                    className={`inline-block transition-all duration-700 mr-3 ${
-                      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}
-                    style={{ transitionDelay: `${i * 100}ms` }}
-                  >
-                    {word}
-                  </span>
-                ))}
-                <br />
-              </span>
-              {['Driven', 'by', 'Expertise.®'].map((word, i) => (
-                <span
-                  key={i}
-                  className={`inline-block transition-all duration-700 mr-3 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                  }`}
-                  style={{ transitionDelay: `${(i + 3) * 100}ms` }}
-                >
-                  {word}
-                </span>
-              ))}
+              <AnimatedWords text="Built on Trust." delayOffset={3} className="text-zinc-400" />
+              <br />
+              <AnimatedWords text="Driven by Expertise.®" delayOffset={3} className="text-zinc-400" />
             </h2>
           </div>
 
@@ -164,32 +116,20 @@ const AboutSection: React.FC = () => {
 
             <div className="flex flex-col justify-center space-y-8">
               <div>
-                <h3 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-4">
-                  {['Why', 'Choose', 'Us?'].map((word, i) => (
-                    <span
-                      key={i}
-                      className={`inline-block transition-all duration-700 mr-3 ${
-                        isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-4 blur-sm'
-                      }`}
-                      style={{ transitionDelay: `${i * 100 + 800}ms` }}
-                    >
-                      {word}
-                    </span>
-                  ))}
+                <h3 className="text-4xl md:text-5xl lg:text-6l font-bold text-zinc-900 mb-4">
+                  <AnimatedWords text="Why Choose Us" delayOffset={3} />
                 </h3>
                 <p
-                  className={`text-base text-zinc-600 transition-all duration-700 delay-1000 ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                  }`}
+                  className={`text-base text-zinc-600 transition-all duration-700 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                    }`}
                 >
                   At Globex, our values define how we do business — fostering long-term partnerships, ensuring quality in every transaction, and upholding our commitment to global trade excellence.
                 </p>
               </div>
 
               <div
-                className={`space-y-4 transition-all duration-700 delay-1200 ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                }`}
+                className={`space-y-4 transition-all duration-700 delay-1200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                  }`}
               >
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-zinc-900 rounded-full" />
@@ -206,9 +146,8 @@ const AboutSection: React.FC = () => {
               </div>
 
               <div
-                className={`transition-all duration-700 delay-1400 ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                }`}
+                className={`transition-all duration-700 delay-1400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                  }`}
               >
                 <a
                   href="/contact"
@@ -233,9 +172,8 @@ const AboutSection: React.FC = () => {
 
           <div className="mb-12">
             <div
-              className={`inline-flex items-center text-zinc-700 gap-2 mb-8 transition-all duration-700 ${
-                isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
+              className={`inline-flex items-center text-zinc-700 gap-2 mb-8 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
             >
               <FaRegHandPeace className="w-4 h-4" />
               <span className="font-medium">Our Journey of Excellence</span>
@@ -251,16 +189,8 @@ const AboutSection: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {stats.map((stat, index) => (
-              <StatCardComponent
-                key={stat.id}
-                stat={stat}
-                delay={index * 150}
-                isVisible={isVisible}
-              />
-            ))}
-          </div>
+          <StatsSection />
+
         </div>
       </section>
 
@@ -289,9 +219,8 @@ interface ValueCardProps {
 const ValueCardComponent: React.FC<ValueCardProps> = ({ value, delay, isVisible }) => {
   return (
     <div
-      className={`relative rounded-lg border border-zinc-200 bg-zinc-50 p-8 overflow-hidden transition-all duration-700 hover:shadow-lg ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-      }`}
+      className={`relative rounded-lg border border-zinc-200 bg-zinc-50 p-8 overflow-hidden transition-all duration-700 hover:shadow-lg ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+        }`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       <div
@@ -329,38 +258,4 @@ const ValueCardComponent: React.FC<ValueCardProps> = ({ value, delay, isVisible 
     </div>
   );
 };
-
-interface StatCardProps {
-  stat: StatCard;
-  delay: number;
-  isVisible: boolean;
-}
-
-const StatCardComponent: React.FC<StatCardProps> = ({ stat, delay, isVisible }) => {
-  return (
-    <div
-      className={`relative rounded-lg border border-zinc-200 bg-zinc-50 p-8 text-center overflow-hidden transition-all duration-700 hover:shadow-lg ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-      }`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      <div
-        className="absolute inset-0 opacity-10 pointer-events-none"
-        style={{
-          backgroundImage: `url("https://framerusercontent.com/images/N9GeBa0CRBIhhvb9pYLnIeWF4gQ.svg?width=200&height=120")`,
-          backgroundRepeat: 'repeat',
-          backgroundSize: '20px',
-          backgroundPosition: 'left top',
-        }}
-      />
-
-      <div className="relative z-10 space-y-4">
-        <div className="flex justify-center">{stat.icon}</div>
-        <h3 className="text-5xl md:text-6xl font-semibold text-zinc-900">{stat.value}</h3>
-        <p className="text-base text-zinc-600">{stat.label}</p>
-      </div>
-    </div>
-  );
-};
-
 export default AboutSection;

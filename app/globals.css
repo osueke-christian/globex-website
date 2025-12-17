@@ -129,6 +129,8 @@
 
 html, :root {
   scroll-behavior: smooth;
+  font-weight: 500;
+  color: black
 }
 
 .scrollbar-hide {

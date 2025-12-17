@@ -1,38 +1,20 @@
 "use client";
 
+import { WaveIcon, TargetIcon } from "@/components/icons/icons";
 import { motion } from "framer-motion";
-
-type Stat = {
-  value: string;
-  label: string;
-};
-
-const stats: Stat[] = [
-  { value: "6+", label: "Countries" },
-  { value: "15+", label: "Years" },
-  { value: "100+", label: "Partners" },
-];
+import StatsSection from "../about/stats-section";
+import { AnimatedWords } from "@/components/animated-words";
 
 export default function About() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-14 md:py-20 bg-white">
       <div className="container mx-auto px-6 space-y-20">
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <h2 className="text-left text-4xl md:text-6xl font-semibold leading-tight tracking-tight">
-            <span className="block text-neutral-400">Welcome to</span>
-            <span className="text-neutral-900">
-              Globex Worldwide<span className="align-super text-xl">®</span>
-            </span>
-          </h2>
-        </motion.div>
+        <h2 className="text-left text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900">
+          <AnimatedWords text="Welcome to" delayOffset={3} className="text-zinc-400" />
+          <AnimatedWords text="Globex Worldwide" delayOffset={6} className="text-zinc-900" />
+          <AnimatedWords text="®" delayOffset={9} className="text-zinc-900 align-super text-xl" />
+        </h2>
 
-        {/* Video + Content */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,18 +67,7 @@ export default function About() {
           </div>
         </motion.div>
 
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-6"
-        >
-          {stats.map((stat, i) => (
-            <StatCard key={stat.label} stat={stat} index={i} />
-          ))}
-        </motion.div>
+        <StatsSection />
       </div>
     </section>
   );
@@ -123,60 +94,13 @@ function InfoBlock({
       transition={{ duration: 0.6 }}
       className="space-y-4"
     >
-      <div className="flex items-center gap-3">
-        <Icon className="h-6 w-6 text-neutral-400" />
-        <h4 className="text-lg font-semibold text-neutral-900">{title}</h4>
+      <div className="flex items-center gap-3 font-semibold">
+        <Icon className="h-11 w-11 text-zinc-600" />
+        <h4 className="text-2xl text-zinc-900">
+          <AnimatedWords text={title} delayOffset={3} />
+        </h4>
       </div>
-      <p className="text-neutral-600 leading-relaxed">{text}</p>
+      <p className="text-zinc-600">{text}</p>
     </motion.div>
-  );
-}
-
-function StatCard({ stat, index }: { stat: Stat; index: number }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1, duration: 0.5 }}
-      className="relative rounded-xl border bg-neutral-50 p-8 text-center overflow-hidden"
-    >
-      {/* Decorative background */}
-      <div
-        className="absolute inset-0 opacity-10"
-        style={{
-          backgroundImage:
-            "url(https://framerusercontent.com/images/N9GeBa0CRBIhhvb9pYLnIeWF4gQ.svg)",
-          backgroundSize: "20px",
-        }}
-      />
-
-      <div className="relative z-10 space-y-2">
-        <h3 className="text-5xl font-semibold tracking-tight text-neutral-900">
-          {stat.value}
-        </h3>
-        <p className="text-sm text-neutral-600">{stat.label}</p>
-      </div>
-    </motion.div>
-  );
-}
-
-/* ---------------------------------- */
-/* Icons */
-/* ---------------------------------- */
-
-function WaveIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 256 256" className={className} fill="currentColor">
-      <path d="M216,70.39v112c-72,59.69-104-56.47-176,3.22v-112C112,13.92,144,130.08,216,70.39Z" />
-    </svg>
-  );
-}
-
-function TargetIcon({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 256 256" className={className} fill="currentColor">
-      <path d="M128 80a48 48 0 1 0 48 48 48 48 0 0 0-48-48Z" />
-    </svg>
   );
 }

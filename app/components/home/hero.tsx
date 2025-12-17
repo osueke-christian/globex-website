@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-[90dvh] w-full overflow-hidden">
       {/* Background Video */}
       <video
         src="https://framerusercontent.com/assets/q4mBBM31OcJVynmu4MYXGByFb3s.mp4"
@@ -31,7 +31,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-3xl"
           >
-            <h1 className="text-balance font-semibold tracking-tight text-white text-4xl md:text-6xl leading-tight">
+            <h1 className="text-balance font-semibold tracking-tight text-white text-3xl md:text-4xl leading-tight">
               Leading global commodity trading company
             </h1>
 

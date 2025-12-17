@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 
@@ -116,13 +117,15 @@ const Footer: React.FC = () => {
           {/* Brand Section */}
           <div className="space-y-6">
             <div className="w-40">
-              <img
+              <Image
+                width={252}
+                height={153}
                 src="https://framerusercontent.com/images/AbzZXWoIidWfAiHiTZRt3whmbI.png?width=252&height=153"
                 alt="Globex International"
                 className="w-full h-auto"
               />
             </div>
-            <p className="text-sm text-gray-300 leading-relaxed">
+            <p className=" text-gray-300 leading-relaxed">
               A global commodity trading company specializing in petroleum, construction materials, energy, fertilizers, and agro commodities. Trusted since 2007.
             </p>
             <div className="flex gap-4">
@@ -130,36 +133,36 @@ const Footer: React.FC = () => {
                 href="#"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-110"
               >
-                <FaFacebookF className="text-white text-sm" />
+                <FaFacebookF className="text-white " />
               </a>
               <a
                 href="#"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-110"
               >
-                <FaInstagram className="text-white text-sm" />
+                <FaInstagram className="text-white " />
               </a>
               <a
                 href="#"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-110"
               >
-                <FaTwitter className="text-white text-sm" />
+                <FaTwitter className="text-white " />
               </a>
               <a
                 href="#"
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-110"
               >
-                <FaLinkedinIn className="text-white text-sm" />
+                <FaLinkedinIn className="text-white " />
               </a>
             </div>
           </div>
 
           {/* Get In Touch */}
           <div>
-            <h3 className="text-base font-medium mb-6">Get In Touch</h3>
+            <h3 className="text-lg font-medium mb-6">Get In Touch</h3>
             <div className="space-y-3">
-              <p className="text-sm text-gray-300">+971-42765747</p>
-              <p className="text-sm text-gray-300">marketingglobal@globexinternational.in</p>
-              <p className="text-sm text-gray-300 leading-relaxed">
+              <p className=" text-gray-300">+971-42765747</p>
+              <p className=" text-gray-300">marketingglobal@globexinternational.in</p>
+              <p className=" text-gray-300 leading-relaxed">
                 611, Goldcrest Executive Tower,<br />
                 Cluster C, JLT, Dubai.
               </p>
@@ -168,29 +171,29 @@ const Footer: React.FC = () => {
 
           {/* Company */}
           <div>
-            <h3 className="text-base font-medium mb-6">Company</h3>
+            <h3 className="text-lg font-medium mb-6">Company</h3>
             <div className="space-y-3">
               <a
                 href="/"
-                className="block text-sm text-gray-300 hover:text-white transition-colors duration-200"
+                className="block  text-gray-300 hover:text-white transition-colors duration-200"
               >
                 Home
               </a>
               <a
                 href="/products"
-                className="block text-sm text-gray-300 hover:text-white transition-colors duration-200"
+                className="block  text-gray-300 hover:text-white transition-colors duration-200"
               >
                 Products
               </a>
               <a
                 href="/about"
-                className="block text-sm text-gray-300 hover:text-white transition-colors duration-200"
+                className="block  text-gray-300 hover:text-white transition-colors duration-200"
               >
                 About Us
               </a>
               <a
                 href="/contact"
-                className="block text-sm text-gray-300 hover:text-white transition-colors duration-200"
+                className="block  text-gray-300 hover:text-white transition-colors duration-200"
               >
                 Contact Us
               </a>
@@ -199,17 +202,17 @@ const Footer: React.FC = () => {
 
           {/* Legal */}
           <div>
-            <h3 className="text-base font-medium mb-6">Legal</h3>
+            <h3 className="text-lg font-medium mb-6">Legal</h3>
             <div className="space-y-3">
               <a
                 href="#"
-                className="block text-sm text-gray-300 hover:text-white transition-colors duration-200"
+                className="block  text-gray-300 hover:text-white transition-colors duration-200"
               >
                 Terms of Service
               </a>
               <a
                 href="#"
-                className="block text-sm text-gray-300 hover:text-white transition-colors duration-200"
+                className="block  text-gray-300 hover:text-white transition-colors duration-200"
               >
                 Privacy Policy
               </a>
@@ -219,7 +222,7 @@ const Footer: React.FC = () => {
 
         {/* Copyright */}
         <div className="pt-8 border-t border-white/10">
-          <div className="flex items-center gap-2 text-sm text-gray-300">
+          <div className="flex items-center gap-2  text-gray-300">
             <span> &copy; {new Date().getFullYear() } Globex. All rights reserved.</span>
           </div>
         </div>
