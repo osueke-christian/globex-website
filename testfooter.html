@@ -1,0 +1,94 @@
+<style>
+    :root {
+        --bg-color: #18181b;
+        /* zinc-900 */
+        --grid-item-color: rgba(255, 255, 255, 0.03);
+    }
+
+    body {
+        margin: 0;
+        background-color: #111;
+    }
+
+    .footer-container {
+        position: relative;
+        background-color: var(--bg-color);
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: sans-serif;
+    }
+
+    .grid-container {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 60px);
+        grid-auto-rows: 60px;
+        gap: 16px;
+        /* gap-4 */
+        padding: 16px;
+        pointer-events: none;
+        justify-content: center;
+    }
+
+    .grid-item {
+        width: 60px;
+        height: 60px;
+        background-color: var(--grid-item-color);
+        border-radius: 4px;
+        opacity: 0;
+        animation: fadeInOut 4s infinite ease-in-out;
+    }
+
+    @keyframes fadeInOut {
+
+        0%,
+        100% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+    }
+
+    .relative {
+        position: relative;
+    }
+
+    .z-10 {
+        z-index: 10;
+    }
+</style>
+
+<div class="footer-container">
+    <div id="grid" class="grid-container">
+        <!-- Grid items will be injected here -->
+    </div>
+    <div class="relative z-10">
+        <h2 style="font-size: 2rem; font-weight: 300; letter-spacing: 0.1em;">GLOBEX</h2>
+    </div>
+</div>
+
+<script>
+    const grid = document.getElementById('grid');
+    const columns = Math.ceil(window.innerWidth / (60 + 16)) + 2;
+    const rows = Math.ceil(400 / (60 + 16)) + 2;
+    const totalItems = columns * rows;
+
+    for (let i = 0; i < totalItems; i++) {
+        const item = document.createElement('div');
+        item.className = 'grid-item';
+        // Random delay between 0 and 4 seconds
+        const delay = Math.random() * 4;
+        const duration = 3 + Math.random() * 4; // Random duration between 3s and 7s
+        item.style.animationDelay = `${delay}s`;
+        item.style.animationDuration = `${duration}s`;
+        grid.appendChild(item);
+    }
+</script>

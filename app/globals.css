@@ -44,7 +44,7 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
-  
+
   --default-font-family: "interDisplay", "interDisplay Fallback";
   --default-font-feature-settings: "salt", "ss01", "ss02", "ss03", "ss04", "ss08";
 }
@@ -122,14 +122,18 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
 
-html, :root {
+
+html,
+:root {
   scroll-behavior: smooth;
   font-weight: 500;
+  font-size: 20px;
   color: black
 }
 
@@ -144,4 +148,70 @@ html, :root {
 
 .inter-display-font {
   font-feature-settings: "salt" "ss01" "ss02" "ss03" "ss04" "ss08" !important;
+}
+
+.scroll-progress {
+  width: 100%;
+  transform-origin: left;
+  transform: scaleX(0);
+
+  animation-name: custom-scroll-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+
+  animation-timeline: scroll(root block);
+}
+
+@keyframes custom-scroll-progress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+}
+
+@keyframes gridFadeInOut {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+footer .grid-background-container {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 60px);
+  grid-auto-rows: 60px;
+  gap: 16px;
+  /* gap-4 */
+  padding: 16px;
+  pointer-events: none;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.grid-background-item {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.035);
+  border-radius: 4px;
+  opacity: 0;
+  animation: gridFadeInOut 4s infinite ease-in-out;
 }

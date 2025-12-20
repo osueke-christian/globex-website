@@ -7,12 +7,11 @@ import { AnimatedWords } from "@/components/animated-words";
 
 export default function About() {
   return (
-    <section className="py-14 md:py-20 bg-white">
-      <div className="container mx-auto px-6 space-y-20">
-        <h2 className="text-left text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900">
-          <AnimatedWords text="Welcome to" delayOffset={3} className="text-zinc-400" />
-          <AnimatedWords text="Globex Worldwide" delayOffset={6} className="text-zinc-900" />
-          <AnimatedWords text="®" delayOffset={9} className="text-zinc-900 align-super text-xl" />
+    <section className="py-14 md:py-20 bg-white w-full items-center">
+      <div className="container mx-auto px-6 relative lg:px-0 space-y-10">
+        <h2 className="text-left text-4xl md:text-5xl lg:text-7xl font-semibold">
+          <AnimatedWords text="Welcome to" delayOffset={3} className="text-zinc-500" />
+          <AnimatedWords text="Globex Worldwide ®" delayOffset={6} className="text-zinc-900" />
         </h2>
 
         <motion.div
@@ -23,9 +22,9 @@ export default function About() {
           className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
         >
           {/* Video */}
-          <div className="overflow-hidden rounded-xl">
+          <div className="overflow-hidden rounded-md">
             <video
-              src="https://framerusercontent.com/assets/bnXW5kuLgDnDOscrWOV4xhEjZBo.mp4"
+              src="/assets/videos/bnXW5kuLgDnDOscrWOV4xhEjZBo.mp4"
               autoPlay
               loop
               muted
@@ -92,15 +91,15 @@ function InfoBlock({
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="space-y-4"
+      className="space-y-3"
     >
       <div className="flex items-center gap-3 font-semibold">
-        <Icon className="h-11 w-11 text-zinc-600" />
+        <Icon className="h-10 w-10 text-zinc-500" />
         <h4 className="text-2xl text-zinc-900">
           <AnimatedWords text={title} delayOffset={3} />
         </h4>
       </div>
-      <p className="text-zinc-600">{text}</p>
+      <p className="text-sm text-zinc-500">{text}</p>
     </motion.div>
   );
 }

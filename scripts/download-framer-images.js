@@ -76,7 +76,8 @@ function download(url, filepath) {
   console.log(`Found ${found.size} framer images`);
 
   for (const url of found) {
-    const filename = url.split("/").pop().split("?")[0];
+    const downloadURL = url.split("?")[0];
+    const filename = downloadURL.split("/").pop();
     const outputPath = path.join(OUTPUT_DIR, filename);
 
     if (fs.existsSync(outputPath)) {
@@ -85,7 +86,7 @@ function download(url, filepath) {
     }
 
     console.log(`Downloading: ${filename}`);
-    await download(url, outputPath);
+    await download(downloadURL, outputPath);
   }
 
   console.log("✅ All images downloaded");

@@ -44,7 +44,7 @@ const ProductCard = ({ product, overlayColor }: ProductCardProps) => {
         initial={false}
         animate={{
           height: isOpen ? '100%' : 'auto',
-          backgroundColor: isOpen ? (overlayColor || 'rgba(0, 0, 0, 0.8)') : 'rgba(0, 0, 0, 0.6)',
+          backgroundColor: isOpen ? (overlayColor || 'rgba(0, 0, 0, 0.8)') : 'rgba(0, 0, 0, 0.8)',
         }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
         className={cn("absolute bottom-0 left-0 right-0 w-full p-3 flex flex-col z-10 overflow-hidden rounded-2xl", !isOpen && "cursor-pointer")}

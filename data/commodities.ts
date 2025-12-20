@@ -61,27 +61,27 @@ export const PRODUCT_DATA: ProductCategory[] = [
     products: [
       {
         name: 'IRON ORE PELLETS',
-        imageSrc: 'https://framerusercontent.com/images/KfMScQyK4kB4fQbMRGvcT8IX4Q.jpeg',
+        imageSrc: '/assets/images/KfMScQyK4kB4fQbMRGvcT8IX4Q.jpeg',
         description: 'Iron ore pellets are refined, compacted balls of iron ore used as a primary raw material in steel production. With high iron content and consistent quality, they provide efficient furnace performance, reduced impurities, and improved productivity in steelmaking.'
       },
       {
         name: 'STEEL BILLETS',
-        imageSrc: 'https://framerusercontent.com/images/qldEWTqkXvzIKUUIMz95akYUcYM.jpeg',
+        imageSrc: '/assets/images/qldEWTqkXvzIKUUIMz95akYUcYM.jpeg',
         description: 'Steel billets are semi-finished solid steel bars that serve as the foundational material for producing various steel products such as rods, bars, and structural components. Known for their strength, purity, and workability, billets are essential in manufacturing and construction industries.'
       },
       {
         name: 'HBI',
-        imageSrc: 'https://framerusercontent.com/images/75fAGeqLA3kcfNphgJqq6H4HaWA.jpeg',
+        imageSrc: '/assets/images/75fAGeqLA3kcfNphgJqq6H4HaWA.jpeg',
         description: 'HBI is a compacted form of direct reduced iron, created to make DRI safer and easier to transport. Its dense structure minimizes oxidation and provides a stable, high-quality input for electric arc furnaces in steel production.'
       },
       {
         name: 'DRI',
-        imageSrc: 'https://framerusercontent.com/images/FZw1IfY34xPF3L8itPpt3KSP8.jpeg',
+        imageSrc: '/assets/images/FZw1IfY34xPF3L8itPpt3KSP8.jpeg',
         description: 'DRI is produced by removing oxygen from iron ore without melting the material. It offers a clean, high-grade iron source for steelmaking, helping reduce energy consumption and improve control over the final steel composition.'
       },
       {
         name: 'BAUXITE',
-        imageSrc: 'https://framerusercontent.com/images/tboh4pAslB7ZSrzej91QPJnoZ1A.jpeg',
+        imageSrc: '/assets/images/tboh4pAslB7ZSrzej91QPJnoZ1A.jpeg',
         description: 'Bauxite is the primary ore used in the production of alumina and aluminum. Rich in aluminum oxide, it is a crucial industrial raw material used in metal production, refractories, abrasives, and various chemical processes.'
       },
     ],
@@ -94,22 +94,22 @@ export const PRODUCT_DATA: ProductCategory[] = [
     products: [
       {
         name: 'UREA',
-        imageSrc: 'https://framerusercontent.com/images/dGM8XZU2IalySi8lk8Tm7ELxfI.jpeg',
+        imageSrc: '/assets/images/dGM8XZU2IalySi8lk8Tm7ELxfI.jpeg',
         description: 'Urea is a highly concentrated nitrogen fertilizer that helps crops grow faster and greener. It dissolves quickly in soil and promotes strong leaf and stem development.'
       },
       {
         name: 'DAP',
-        imageSrc: 'https://framerusercontent.com/images/PyUXj0xHTaXGCNOmjzH3aXX3QQ.jpeg',
+        imageSrc: '/assets/images/PyUXj0xHTaXGCNOmjzH3aXX3QQ.jpeg',
         description: 'DAP is a widely used fertilizer that provides both phosphorus and nitrogen. It supports early root development, seedling strength, and overall plant health.'
       },
       {
         name: 'SULFUR',
-        imageSrc: 'https://framerusercontent.com/images/vOWSm9eGrhLjuBx1omyU2ssZ8.jpeg',
+        imageSrc: '/assets/images/vOWSm9eGrhLjuBx1omyU2ssZ8.jpeg',
         description: 'Sulfur is an essential nutrient that improves protein formation, chlorophyll production, and overall crop quality. It also helps enhance soil health and correct sulfur deficiencies.'
       },
       {
         name: 'AMMONIA',
-        imageSrc: 'https://framerusercontent.com/images/eJgswC40QHbDAJlzR0dg57UQOVc.jpeg',
+        imageSrc: '/assets/images/eJgswC40QHbDAJlzR0dg57UQOVc.jpeg',
         description: 'Ammonia is a powerful nitrogen-rich fertilizer injected directly into the soil. It boosts vigorous plant growth and is commonly used for large-scale farming to increase yield.'
       },
     ],

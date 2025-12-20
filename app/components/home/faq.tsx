@@ -98,13 +98,13 @@ const FAQSection: React.FC = () => {
           </div>
 
           {/* Title with word animation */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900">
-            <AnimatedWords text="Got Questions" delayOffset={3} />
+          <h2 className="text-4xl md:text-5xl lg:text-7xl lg:font-bold font-semibold text-zinc-900">
+            <AnimatedWords text="Got Questions?" delayOffset={3} />
           </h2>
 
           {/* Subtitle */}
           <p
-            className={`text-base md:text-lg text-zinc-600 max-w-2xl mx-auto transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            className={`text-base md:text-lg text-zinc-500 max-w-2xl mx-auto transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
           >
             Everything you need to know before you grab your board and hit the waves.
@@ -155,7 +155,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
 
   return (
     <div
-      className="border border-zinc-200 rounded-lg bg-zinc-50 overflow-hidden transition-all duration-300 hover:shadow-md"
+      className="border border-zinc-200 rounded-lg bg-zinc-50 overflow-hidden transition-all duration-300 hover:shadow-md max-w-[720px] mx-auto"
       style={{ transitionDelay: `${delay}ms` }}
     >
       {/* Question */}
@@ -189,7 +189,7 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
         <div ref={contentRef} className="px-6 pb-6">
           {
             isOpen && (
-              <p className="text-base text-zinc-600 leading-relaxed animate-onrender">{faq.answer}</p>
+              <p className="text-base text-zinc-500 leading-relaxed animate-onrender">{faq.answer}</p>
             )
           }
         </div>

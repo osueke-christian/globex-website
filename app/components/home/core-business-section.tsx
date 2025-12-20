@@ -8,7 +8,7 @@ import { AnimatedWords } from "@/components/animated-words";
 export default function CoreBusinessesSection() {
   return (
     <section id="courses" className="py-14 md:py-20 bg-white">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 space-y-10 lg:space-y-14">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -17,7 +17,7 @@ export default function CoreBusinessesSection() {
           transition={{ duration: 0.6 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <h2 className="text-4xl font-bold text-black tracking-tight md:text-5xl">
+          <h2 className="text-4xl font-semibold text-black tracking-tight md:text-5xl">
             <AnimatedWords text="Our Core Businesses" delayOffset={3} />
           </h2>
           <p className="mt-4 text-muted-foreground">
@@ -28,10 +28,12 @@ export default function CoreBusinessesSection() {
         </motion.div>
 
         {/* Cards */}
-        <div className="mt-20 space-y-24">
+        <div className="w-full container mx-auto relative">
+        <div className="space-y-10 lg:space-y-14 w-full">
           {coreBusinesses.map((business) => (
             <CoreBusinessCard key={business.title} {...business} />
           ))}
+        </div>
         </div>
       </div>
     </section>

@@ -10,7 +10,7 @@ export default function Hero() {
     <section className="relative h-[90dvh] w-full overflow-hidden">
       {/* Background Video */}
       <video
-        src="https://framerusercontent.com/assets/q4mBBM31OcJVynmu4MYXGByFb3s.mp4"
+        src="/assets/videos/q4mBBM31OcJVynmu4MYXGByFb3s.mp4"
         autoPlay
         loop
         muted
@@ -20,18 +20,18 @@ export default function Hero() {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/20" />
 
       {/* Content */}
       <div className="relative z-10 flex h-full items-center">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 lg:px-0">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-3xl"
           >
-            <h1 className="text-balance font-semibold tracking-tight text-white text-3xl md:text-4xl leading-tight">
+            <h1 className="text-balance font-semibold tracking-tight text-white text-3xl md:text-4xl lg:text-5xl leading-tight">
               Leading global commodity trading company
             </h1>
 

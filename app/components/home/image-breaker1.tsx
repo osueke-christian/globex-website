@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRef } from "react";
 
 export default function ImageBreaker({
-  imageSrc = "https://framerusercontent.com/images/7zuM9Wy3DMdKPJCn7eeqYQnahAw.png",
+  imageSrc = "/assets/images/7zuM9Wy3DMdKPJCn7eeqYQnahAw.png",
   alt = "A man surfing",
 }: {
   imageSrc?: string;

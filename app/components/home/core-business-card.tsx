@@ -7,7 +7,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { CoreBusiness } from "@/data/core-businesses";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { useIsLargeScreen} from "@/hooks/use-mobile";
 
 
 export function CoreBusinessCard({
@@ -17,7 +17,7 @@ export function CoreBusinessCard({
   reverse
 }: CoreBusiness) {
   const ref = useRef<HTMLDivElement>(null);
-  const isMobile = useIsMobile();
+  const isSmallScreen = !useIsLargeScreen();
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -25,7 +25,7 @@ export function CoreBusinessCard({
   });
 
   // Next card grows slightly before snapping
-  const scale = useTransform(scrollYProgress, [0, 0.6, 1], [0.96, 1.02, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.96, 1.05, 1.05, 1]);
   const opacity = useTransform(scrollYProgress, [0, 0.2], [0.8, 1]);
 
   return (
@@ -33,20 +33,20 @@ export function CoreBusinessCard({
       ref={ref}
       style={{ scale, opacity }}
       className={cn(
-        "sticky top-0 z-1 grid min-h-screen items-center",
+        "sticky top-0 z-1 grid items-center",
       )}
     >
       <div
         className={cn(
-          "grid gap-8 md:grid-cols-2 items-center rounded-xl border bg-background bg-center bg-cover p-4 md:p-8 shadow-lg",
-          reverse && "md:[&>*:first-child]:order-2"
+          "grid gap-8 lg:grid-cols-2 items-center rounded-xl border bg-background bg-center bg-cover p-4 lg:px-10 lg:py-14 container",
+          !reverse && "lg:[&>*:nth-child(3)]:order-1 lg:[&>*:nth-child(2)]:order-2"
         )}
         style={{
-          backgroundImage: isMobile? '' : `url(${image})`,
+          backgroundImage: isSmallScreen? '' : `url(${image})`,
         }}
       >
         {/* Image */}
-        <div className="relative h-[320px] w-full overflow-hidden rounded-xl md:hidden">
+        <div className="relative h-[320px] w-full overflow-hidden rounded-xl lg:hidden">
           <Image
             src={image}
             alt={title}
@@ -56,17 +56,17 @@ export function CoreBusinessCard({
           />
         </div>
 
-        <div className="hidden h-[320px] w-full md:block" />
+        <div className="hidden h-[320px] w-full lg:block" />
 
         {/* Content */}
-        <div className="bg-white md:p-6 md:shadow-xl rounded-xl">
+        <div className="bg-white space-y-5 lg:p-10 lg:shadow-xl rounded-xl">
           <h3 className="text-3xl font-semibold tracking-tight">{title}</h3>
-          <p className="mt-4 text-muted-foreground">{description}</p>
+          <p className="text-muted-foreground">{description}</p>
 
           <Button
             size="xl"
             asChild
-            className="mt-6 w-2/3 min-w-[200px] rounded-full bg-neutral-900 hover:bg-neutral-800"
+            className="w-2/3 min-w-[200px] lg:w-auto lg:min-w-auto rounded-full bg-neutral-900 hover:bg-neutral-800"
           >
             <Link href="/products">Learn More</Link>
           </Button>

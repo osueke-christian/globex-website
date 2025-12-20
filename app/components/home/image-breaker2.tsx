@@ -28,7 +28,7 @@ export default function ImageBreaker2() {
       >
         <Image
           fill
-          src="https://framerusercontent.com/images/So0bwy2oxR7SWNdqnpmA8FUQlA.png"
+          src="/assets/images/So0bwy2oxR7SWNdqnpmA8FUQlA.png"
           alt="A man doing surf stunt"
           className="h-full w-full object-cover"
           loading="lazy"

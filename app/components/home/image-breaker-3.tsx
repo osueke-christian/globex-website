@@ -21,7 +21,7 @@ export default function ImageBreaker3() {
       className="relative h-[60vh] overflow-hidden md:h-[70vh]"
     >
       <motion.img
-        src="https://framerusercontent.com/images/fbe6u0taPVo0T6GI5CtocEso.png"
+        src="/assets/images/fbe6u0taPVo0T6GI5CtocEso.png"
         alt="A man Surfing"
         style={{ y, scale }}
         className="absolute inset-0 h-full w-full object-cover will-change-transform"

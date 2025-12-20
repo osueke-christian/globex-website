@@ -16,15 +16,15 @@ export default function Home() {
       <About />
       <ImageBreaker />
       <CoreBusinessesSection />
-      <ImageBreaker imageSrc="https://framerusercontent.com/images/So0bwy2oxR7SWNdqnpmA8FUQlA.png" alt="A man doing a surf stunt" />
+      <ImageBreaker imageSrc="/assets/images/So0bwy2oxR7SWNdqnpmA8FUQlA.png" alt="A man doing a surf stunt" />
       <Locations />
-      <ImageBreaker imageSrc="https://framerusercontent.com/images/fbe6u0taPVo0T6GI5CtocEso.png" />
+      <ImageBreaker imageSrc="/assets/images/fbe6u0taPVo0T6GI5CtocEso.png" />
       <GallerySection />
-      <ImageBreaker imageSrc="https://framerusercontent.com/images/So0bwy2oxR7SWNdqnpmA8FUQlA.png" />
+      <ImageBreaker imageSrc="/assets/images/So0bwy2oxR7SWNdqnpmA8FUQlA.png" />
       <TestimonialsSection />
-      <ImageBreaker imageSrc="https://framerusercontent.com/images/od0Qyj26gghxNjVtxRwcSq7oZU.jpg" />
+      <ImageBreaker imageSrc="/assets/images/od0Qyj26gghxNjVtxRwcSq7oZU.jpg" />
       <FAQSection />
-      <ImageBreaker imageSrc="https://framerusercontent.com/images/ADxhBrAY9KMAACeF4eA108mzzkQ.png" />
+      <ImageBreaker imageSrc="/assets/images/ADxhBrAY9KMAACeF4eA108mzzkQ.png" />
     </div>
   );
 }

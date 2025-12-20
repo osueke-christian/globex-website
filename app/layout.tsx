@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "Blobex Website",
+    title: "Globex Website",
     description: "GLOBEX sources and delivers three major product categories globally, which are construction Material/Cementitious and cementitious commodities, Fertilizer and agro-commodities."
   },
   twitter: {

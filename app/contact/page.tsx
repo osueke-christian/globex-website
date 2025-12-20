@@ -8,9 +8,9 @@ export default function Home() {
         <div className="flex flex-col min-h-screen relative z-0">
             <HeroImageBreaker />
             <ContactSection />
-            <ImageBreaker imageSrc="https://framerusercontent.com/images/EAjc9uoARyH2d4XDCRFAqXiG8.png" />
+            <ImageBreaker imageSrc="/assets/images/EAjc9uoARyH2d4XDCRFAqXiG8.png" />
             <FAQSection />
-            <ImageBreaker imageSrc="https://framerusercontent.com/images/ADxhBrAY9KMAACeF4eA108mzzkQ.png" />
+            <ImageBreaker imageSrc="/assets/images/ADxhBrAY9KMAACeF4eA108mzzkQ.png" />
         </div>
     );
 }

@@ -63,10 +63,10 @@ const CategorySection = ({ category }: { category: ProductCategory }) => {
             variants={sectionVariants}
         >
             <div className="space-y-2">
-                <h2 className="text-3xl md:text-4xl font-medium text-gray-900">
-                    <AnimatedWords text={category.title} delayOffset={3}  />
+                <h2 className="text-3xl md:text-4xl font-medium text-zinc-900">
+                    <AnimatedWords text={category.title} delayOffset={3} />
                 </h2>
-                <p className="text-lg text-gray-600 max-w-2xl">
+                <p className="text-sm text-zinc-500 max-w-2xl">
                     {category.subtitle}
                 </p>
             </div>
@@ -97,7 +97,7 @@ const CategorySection = ({ category }: { category: ProductCategory }) => {
                             aria-label={`Scroll left for ${category.title}`}
                             disabled={!canScrollLeft}
                         >
-                            <ChevronLeft className="w-6 h-6 text-gray-600" />
+                            <ChevronLeft className="w-6 h-6 text-zinc-500" />
                         </Button>
 
                         <Button

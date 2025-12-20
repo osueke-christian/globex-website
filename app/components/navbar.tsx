@@ -33,31 +33,35 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="backdrop-blur-md bg-[#0f0f0f] border-b border-[rgba(9,9,9,0.1)] w-full sticky top-0 left-0 z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <nav className="backdrop-blur-md bg-[#0f0f0f] text-sm border-b border-[rgba(9,9,9,0.1)] w-full sticky top-0 left-0 z-50">
+      {/* progress bar */}
+      <div className="w-full h-1 bg-white overflow-hidden">
+        <div className="scroll-progress h-full bg-[#ff4f01]" />
+      </div>
+      <div className="container flex items-center justify-between px-6 py-4">
         {/* Brand Logo */}
         <Link href="/" className="h-12 w-32 relative z-50">
           <Image
             width={252}
             height={153}
-            src="https://framerusercontent.com/images/AbzZXWoIidWfAiHiTZRt3whmbI.png?width=252&height=153"
+            src="/assets/images/AbzZXWoIidWfAiHiTZRt3whmbI.png"
             alt="Brand Logo"
             className="object-cover w-full h-full"
           />
         </Link>
 
         {/* Desktop Navigation Links */}
-        <div className="hidden md:flex space-x-6 font-semibold">
-          <DesktopNavink href="/">Home</DesktopNavink>
-          <DesktopNavink href="/products">Products</DesktopNavink>
-          <DesktopNavink href="/about">Why Us</DesktopNavink>
+        <div className="hidden md:flex space-x-6 font-medium">
+          <DesktopNavLink href="/">Home</DesktopNavLink>
+          <DesktopNavLink href="/products">Products</DesktopNavLink>
+          <DesktopNavLink href="/about">Why Us</DesktopNavLink>
         </div>
 
         {/* Desktop Button */}
-        <div className="hidden md:block font-semibold">
+        <div className="hidden md:block font-medium">
           <Link
             href="/contact"
-            className="ml-4 px-5 py-2 rounded-full bg-white text-[#111111] relative flex items-center justify-center hover:bg-gray-100 transition-colors"
+            className="ml-4 px-5 py-2 rounded-full bg-white text-[#111111] relative flex items-center justify-center hover:bg-zinc-100 transition-colors"
           >
             Get a Quote
             <span className="absolute -left-2 w-2 h-2 bg-[#090909] rounded-full"></span>
@@ -98,7 +102,7 @@ export default function Navbar() {
 
               <Link
                 href="/"
-                className="text-white text-lg font-medium hover:text-blue-400 transition-colors"
+                className="text-white font-medium hover:text-blue-400 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Home
@@ -119,7 +123,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/contact"
-                className="w-full px-5 py-3 rounded-full bg-white text-[#111111] text-center font-medium hover:bg-gray-100 transition-colors"
+                className="w-full px-5 py-3 rounded-full bg-white text-[#111111] text-center font-medium hover:bg-zinc-100 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Get a Quote
@@ -133,7 +137,7 @@ export default function Navbar() {
 }
 
 
-const DesktopNavink = ({ children, href }: { children: React.ReactNode, href: string }) => {
+const DesktopNavLink = ({ children, href }: { children: React.ReactNode, href: string }) => {
   return (
     <Link href={href} className="flex flex-col text-white hover:text-zinc-500 h-6 overflow-hidden transition-colors hover:*:-translate-y-full">
       <span className="transition-all translate-y-0  duration-300"> {children} </span>

@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "download-frmaer-images": "node ./scripts/download-framer-images.js"
+    "download-framer-images": "node ./scripts/download-framer-images.js"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",
